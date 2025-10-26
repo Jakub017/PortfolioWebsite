@@ -43,13 +43,19 @@
                 <a href="#about" id="about-link" class="nav__link">About</a>
             </li>
             <li class="nav__item">
-                <a href="#projects" id="projects-link" class="nav__link">Projects</a>
+                <a href="#projects" id="projects-link" class="nav__link"
+                    >Projects</a
+                >
             </li>
             <li class="nav__item">
-                <a href="#experience" id="experience-link" class="nav__link">Experience</a>
+                <a href="#experience" id="experience-link" class="nav__link"
+                    >Experience</a
+                >
             </li>
             <li class="nav__item">
-                <a href="#contact" id="contact-link" class="nav__link">Contact</a>
+                <a href="#contact" id="contact-link" class="nav__link"
+                    >Contact</a
+                >
             </li>
         </ul>
     </nav>
@@ -60,20 +66,23 @@
             class="hero__background"
         />
         <div class="section__container section__container--hero">
-            <p class="hero__top-text animated">
+            <p class="hero__top-text animated animated--is-hidden">
                 MODERN WEB APPS WITH LARAVEL & VUE
             </p>
-            <h1 class="hero__title animated animated--delay-1">
+            <h1 class="hero__title animated animated--is-hidden">
                 Building Reliable Interfaces with
                 <span class="hero__title hero__title--colored"
                     >Laravel and Vue.</span
                 >
                 Fast. Clean. Tailored for the User.
             </h1>
-            <p class="hero__bottom-text animated animated--delay-2">
+            <p class="hero__bottom-text animated animated--is-hidden">
                 Hi! I’m Jakub Lipiński, a Full-Stack Developer based in Poland
             </p>
-            <PrimaryButton type="link" href="#" class="animated--delay-3"
+            <PrimaryButton
+                type="link"
+                href="#"
+                class="animated animated--is-hidden"
                 >Download resume <SquareArrowOutUpRight class="hero__icon"
             /></PrimaryButton>
         </div>
@@ -81,7 +90,7 @@
     <section id="about" class="section about">
         <div class="section__container">
             <div class="about__container">
-                <div class="about__text">
+                <div class="about__text animated animated--is-hidden">
                     <h2
                         class="section__title section__title--left about__title"
                     >
@@ -123,7 +132,7 @@
                     </p>
                 </div>
 
-                <div class="about__info">
+                <div class="about__info animated animated--is-hidden">
                     <div class="about__image-container">
                         <img
                             src="../../../public/img/image-bgc.png"
@@ -153,7 +162,7 @@
     </section>
     <section id="projects" class="section projects">
         <div class="section__container">
-            <h2 class="section__title animated">
+            <h2 class="section__title animated animated--is-hidden">
                 Here's what I've been
                 <span class="section__title section__title--colored"
                     >working on</span
@@ -175,7 +184,7 @@
     </section>
     <section id="experience" class="section experience">
         <div class="section__container">
-            <h2 class="section__title animated">
+            <h2 class="section__title animated animated--is-hidden">
                 Overview of my
                 <span class="section__title section__title--colored"
                     >professional experience</span
@@ -183,7 +192,7 @@
             </h2>
             <div class="experience__container">
                 <div class="experience__items">
-                    <div class="experience__item animated">
+                    <div class="experience__item animated animated--is-hidden">
                         <span class="experience__date">Jan 2023 - Present</span>
                         <div class="experience__text">
                             <h4 class="experience__title">
@@ -220,7 +229,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="experience__item animated">
+                    <div class="experience__item animated animated--is-hidden">
                         <span class="experience__date"
                             >Sep 2022 - Jan 2023</span
                         >
@@ -271,8 +280,8 @@
         <div
             class="section__container section__container--contact section__container--pb-0"
         >
-            <div class="contact__main">
-                <h2 class="section__title animated">
+            <div class="contact__main animated animated--is-hidden">
+                <h2 class="section__title">
                     Feel free to reach out if you'd like to
                     <span class="section__title section__title--colored"
                         >connect</span
@@ -282,7 +291,7 @@
                         >work
                     </span>
                 </h2>
-                <p class="contact__description animated">
+                <p class="contact__description">
                     If you'd like to talk about my work or have questions about
                     my experience, feel free to reach out. I'll get back to you
                     as soon as I can.
@@ -338,6 +347,51 @@ import { SquareArrowOutUpRight, ArrowUpRight } from "lucide-vue-next";
 import PrimaryButton from "../Components/PrimaryButton.vue";
 import ProjectCard from "../Components/ProjectCard.vue";
 import SocialIcon from "../Components/SocialIcon.vue";
+import { EqualSquare } from "lucide";
 
+onMounted(() => {
+    const projectTiles = document.querySelectorAll(".projects__item");
+    for (let i = 0; i < projectTiles.length; i++) {
+        if (i % 2 === 1) {
+            projectTiles[i].classList.add("animated--delayed");
+        }
+    }
 
+    const animatedElements = document.querySelectorAll(".animated");
+    const aboutElements = document.querySelectorAll(".about__container > div");
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove("animated--is-hidden");
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        }
+    );
+
+    const aboutObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animated--about");
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+        }
+    );
+
+    animatedElements.forEach((element) => {
+        observer.observe(element);
+    });
+
+    aboutElements.forEach((element) => {
+        aboutObserver.observe(element);
+    });
+});
 </script>
