@@ -226,7 +226,13 @@
                                     >Prestashop</span
                                 >
                                 <span class="experience__skill">Git</span>
+                                <span class="experience__skill"
+                                    >GitHub Actions</span
+                                >
                                 <span class="experience__skill">Docker</span>
+                                <span class="experience__skill"
+                                    >Linux Server</span
+                                >
                             </div>
                         </div>
                     </div>
