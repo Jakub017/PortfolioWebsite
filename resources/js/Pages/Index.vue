@@ -213,11 +213,12 @@
                             </p>
                             <div class="experience__skills">
                                 <span class="experience__skill">Laravel</span>
+                                <span class="experience__skill">Livewire</span>
+                                <span class="experience__skill">Inertia</span>
                                 <span class="experience__skill">Vue</span>
                                 <span class="experience__skill"
                                     >TypeScript</span
                                 >
-                                <span class="experience__skill">Inertia</span>
                                 <span class="experience__skill">Tailwind</span>
                                 <span class="experience__skill">Sass</span>
                                 <span class="experience__skill">Wordpress</span>
@@ -231,7 +232,7 @@
                     </div>
                     <div class="experience__item animated animated--is-hidden">
                         <span class="experience__date"
-                            >Sep 2022 - Jan 2023</span
+                            >Mar 2022 - Jan 2023</span
                         >
                         <div class="experience__text">
                             <h4 class="experience__title">
