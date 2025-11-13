@@ -238,7 +238,7 @@
                     </div>
                     <div class="experience__item animated animated--is-hidden">
                         <span class="experience__date"
-                            >Mar 2022 - Jan 2023</span
+                            >Oct 2021 - Jan 2023</span
                         >
                         <div class="experience__text">
                             <h4 class="experience__title">
