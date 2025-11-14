@@ -81,7 +81,7 @@
             </p>
             <PrimaryButton
                 type="link"
-                href="#"
+                href="/jakub_lipinski_cv.pdf"
                 class="animated animated--is-hidden"
                 >Download resume <SquareArrowOutUpRight class="hero__icon"
             /></PrimaryButton>
