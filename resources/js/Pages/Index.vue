@@ -112,7 +112,7 @@
                         <span
                             class="about__description about__description--colored"
                             >Laravel and Vue.js</span
-                        >, but I enjoy working across the entire stack — from
+                        >, but I enjoy working across the entire stack - from
                         designing clean APIs to crafting polished, accessible
                         interfaces.
                     </p>
@@ -126,7 +126,7 @@
                             platforms</span
                         >. No matter the scope, I aim for code that’s
                         maintainable, performance-friendly, and pleasant to work
-                        with — because I believe a good developer’s job is not
+                        with - because I believe a good developer’s job is not
                         just to make things work, but to make them easy to
                         improve and enjoyable to use.
                     </p>
@@ -140,7 +140,7 @@
                             class="about__image-background"
                         />
                         <img
-                            src="../../../public/img/me.webp"
+                            src="../../../public/img/me.png"
                             alt=""
                             class="about__image"
                         />
