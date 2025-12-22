@@ -3,7 +3,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "vite build && vite build --ssr",
         "dev": "vite"
     },
     "devDependencies": {
@@ -18,8 +18,9 @@
         "vite": "^6.2.4"
     },
     "dependencies": {
-        "@inertiajs/vue3": "^2.0.17",
+        "@inertiajs/vue3": "^2.3.4",
         "@vitejs/plugin-vue": "^6.0.1",
+        "@vue/server-renderer": "^3.5.26",
         "lucide": "^0.536.0",
         "lucide-vue-next": "^0.536.0",
         "vue": "^3.5.18"

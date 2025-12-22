@@ -1,0 +1,372 @@
+import { defineComponent, unref, mergeProps, withCtx, renderSlot, useSSRContext, onMounted, createVNode, createTextVNode, toDisplayString, createSSRApp, h } from "vue";
+import { ssrRenderComponent, ssrRenderSlot, ssrRenderAttrs, ssrRenderAttr, ssrRenderList, ssrInterpolate } from "vue/server-renderer";
+import { Link, Head, createInertiaApp } from "@inertiajs/vue3";
+import { ArrowUpRight, SquareArrowOutUpRight } from "lucide-vue-next";
+import createServer from "@inertiajs/vue3/server";
+import { renderToString } from "@vue/server-renderer";
+const _imports_0 = "/build/assets/grid-pattern-h7aMQWFv.png";
+const _imports_1 = "/build/assets/image-bgc-A_EeMuTf.png";
+const _imports_2 = "/build/assets/me-NiYH7Ect.png";
+const _sfc_main$4 = /* @__PURE__ */ defineComponent({
+  __name: "PrimaryButton",
+  __ssrInlineRender: true,
+  props: {
+    type: {},
+    href: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      if (__props.type === "internal") {
+        _push(ssrRenderComponent(unref(Link), mergeProps({
+          href: __props.href,
+          class: "main-button"
+        }, _attrs), {
+          default: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              ssrRenderSlot(_ctx.$slots, "default", {}, null, _push2, _parent2, _scopeId);
+            } else {
+              return [
+                renderSlot(_ctx.$slots, "default")
+              ];
+            }
+          }),
+          _: 3
+        }, _parent));
+      } else {
+        _push(`<a${ssrRenderAttrs(mergeProps({
+          href: __props.href,
+          target: "_blank",
+          class: "main-button"
+        }, _attrs))}>`);
+        ssrRenderSlot(_ctx.$slots, "default", {}, null, _push, _parent);
+        _push(`</a>`);
+      }
+    };
+  }
+});
+const _sfc_setup$4 = _sfc_main$4.setup;
+_sfc_main$4.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/PrimaryButton.vue");
+  return _sfc_setup$4 ? _sfc_setup$4(props, ctx) : void 0;
+};
+const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+  __name: "TechIcon",
+  __ssrInlineRender: true,
+  props: {
+    name: {}
+  },
+  setup(__props) {
+    const props = __props;
+    const icons = {
+      Vue: `<svg role="img" class="projects__icon projects__icon--vue" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Vue.js</title><path d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z"/></svg>`,
+      Laravel: `<svg role="img" class="projects__icon projects__icon--laravel" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Laravel</title><path d="M23.642 5.43a.364.364 0 01.014.1v5.149c0 .135-.073.26-.189.326l-4.323 2.49v4.934a.378.378 0 01-.188.326L9.93 23.949a.316.316 0 01-.066.027c-.008.002-.016.008-.024.01a.348.348 0 01-.192 0c-.011-.002-.02-.008-.03-.012-.02-.008-.042-.014-.062-.025L.533 18.755a.376.376 0 01-.189-.326V2.974c0-.033.005-.066.014-.098.003-.012.01-.02.014-.032a.369.369 0 01.023-.058c.004-.013.015-.022.023-.033l.033-.045c.012-.01.025-.018.037-.027.014-.012.027-.024.041-.034H.53L5.043.05a.375.375 0 01.375 0L9.93 2.647h.002c.015.01.027.021.04.033l.038.027c.013.014.02.03.033.045.008.011.02.021.025.033.01.02.017.038.024.058.003.011.01.021.013.032.01.031.014.064.014.098v9.652l3.76-2.164V5.527c0-.033.004-.066.013-.098.003-.01.01-.02.013-.032a.487.487 0 01.024-.059c.007-.012.018-.02.025-.033.012-.015.021-.03.033-.043.012-.012.025-.02.037-.028.014-.01.026-.023.041-.032h.001l4.513-2.598a.375.375 0 01.375 0l4.513 2.598c.016.01.027.021.042.031.012.01.025.018.036.028.013.014.022.03.034.044.008.012.019.021.024.033.011.02.018.04.024.06.006.01.012.021.015.032zm-.74 5.032V6.179l-1.578.908-2.182 1.256v4.283zm-4.51 7.75v-4.287l-2.147 1.225-6.126 3.498v4.325zM1.093 3.624v14.588l8.273 4.761v-4.325l-4.322-2.445-.002-.003H5.04c-.014-.01-.025-.021-.04-.031-.011-.01-.024-.018-.035-.027l-.001-.002c-.013-.012-.021-.025-.031-.04-.01-.011-.021-.022-.028-.036h-.002c-.008-.014-.013-.031-.02-.047-.006-.016-.014-.027-.018-.043a.49.49 0 01-.008-.057c-.002-.014-.006-.027-.006-.041V5.789l-2.18-1.257zM5.23.81L1.47 2.974l3.76 2.164 3.758-2.164zm1.956 13.505l2.182-1.256V3.624l-1.58.91-2.182 1.255v9.435zm11.581-10.95l-3.76 2.163 3.76 2.163 3.759-2.164zm-.376 4.978L16.21 7.087 14.63 6.18v4.283l2.182 1.256 1.58.908zm-8.65 9.654l5.514-3.148 2.756-1.572-3.757-2.163-4.323 2.489-3.941 2.27z"/></svg>`,
+      Inertia: `<svg role="img" class="projects__icon projects__icon--inertia" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Inertia</title><path d="M6.901 5.331H0L6.669 12 0 18.669h6.901L13.571 12 6.9 5.331zm10.43 0H10.43L17.099 12l-6.67 6.669h6.902L24 12l-6.669-6.669z"/></svg>`,
+      Tailwind: `<svg role="img" class="projects__icon projects__icon--tailwind" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Tailwind CSS</title><path d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"/></svg>`,
+      Sass: `<svg role="img" class="projects__icon projects__icon--sass" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Sass</title><path d="M12 0c6.627 0 12 5.373 12 12s-5.373 12-12 12S0 18.627 0 12 5.373 0 12 0zM9.615 15.998c.175.645.156 1.248-.024 1.792l-.065.18c-.024.061-.052.12-.078.176-.14.29-.326.56-.555.81-.698.759-1.672 1.047-2.09.805-.45-.262-.226-1.335.584-2.19.871-.918 2.12-1.509 2.12-1.509v-.003l.108-.061zm9.911-10.861c-.542-2.133-4.077-2.834-7.422-1.645-1.989.707-4.144 1.818-5.693 3.267C4.568 8.48 4.275 9.98 4.396 10.607c.427 2.211 3.457 3.657 4.703 4.73v.006c-.367.18-3.056 1.529-3.686 2.925-.675 1.47.105 2.521.615 2.655 1.575.436 3.195-.36 4.065-1.649.84-1.261.766-2.881.404-3.676.496-.135 1.08-.195 1.83-.104 2.101.24 2.521 1.56 2.43 2.1-.09.539-.523.854-.674.944-.15.091-.195.12-.181.181.015.09.091.09.21.075.165-.03 1.096-.45 1.141-1.471.045-1.29-1.186-2.729-3.375-2.7-.9.016-1.471.091-1.875.256-.03-.045-.061-.075-.105-.105-1.35-1.455-3.855-2.475-3.75-4.41.03-.705.285-2.564 4.8-4.814 3.705-1.846 6.661-1.335 7.171-.21.733 1.604-1.576 4.59-5.431 5.024-1.47.165-2.235-.404-2.431-.615-.209-.225-.239-.24-.314-.194-.12.06-.045.255 0 .375.12.3.585.825 1.396 1.095.704.225 2.43.359 4.5-.45 2.324-.899 4.139-3.405 3.614-5.505l.073.067z"/></svg>`,
+      HTML: `<svg role="img" class="projects__icon projects__icon--html" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>HTML5</title><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"/></svg>`,
+      CSS: `<svg role="img" class="projects__icon projects__icon--css" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>CSS</title><path d="M0 0v20.16A3.84 3.84 0 0 0 3.84 24h16.32A3.84 3.84 0 0 0 24 20.16V3.84A3.84 3.84 0 0 0 20.16 0Zm14.256 13.08c1.56 0 2.28 1.08 2.304 2.64h-1.608c.024-.288-.048-.6-.144-.84-.096-.192-.288-.264-.552-.264-.456 0-.696.264-.696.84-.024.576.288.888.768 1.08.72.288 1.608.744 1.92 1.296q.432.648.432 1.656c0 1.608-.912 2.592-2.496 2.592-1.656 0-2.4-1.032-2.424-2.688h1.68c0 .792.264 1.176.792 1.176.264 0 .456-.072.552-.24.192-.312.24-1.176-.048-1.512-.312-.408-.912-.6-1.32-.816q-.828-.396-1.224-.936c-.24-.36-.36-.888-.36-1.536 0-1.44.936-2.472 2.424-2.448m5.4 0c1.584 0 2.304 1.08 2.328 2.64h-1.608c0-.288-.048-.6-.168-.84-.096-.192-.264-.264-.528-.264-.48 0-.72.264-.72.84s.288.888.792 1.08c.696.288 1.608.744 1.92 1.296.264.432.408.984.408 1.656.024 1.608-.888 2.592-2.472 2.592-1.68 0-2.424-1.056-2.448-2.688h1.68c0 .744.264 1.176.792 1.176.264 0 .456-.072.552-.24.216-.312.264-1.176-.048-1.512-.288-.408-.888-.6-1.32-.816-.552-.264-.96-.576-1.2-.936s-.36-.888-.36-1.536c-.024-1.44.912-2.472 2.4-2.448m-11.031.018c.711-.006 1.419.198 1.839.63.432.432.672 1.128.648 1.992H9.336c.024-.456-.096-.792-.432-.96-.312-.144-.768-.048-.888.24-.12.264-.192.576-.168.864v3.504c0 .744.264 1.128.768 1.128a.65.65 0 0 0 .552-.264c.168-.24.192-.552.168-.84h1.776c.096 1.632-.984 2.712-2.568 2.688-1.536 0-2.496-.864-2.472-2.472v-4.032c0-.816.24-1.44.696-1.848.432-.408 1.146-.624 1.857-.63"/></svg>`,
+      JavaScript: `<svg role="img" class="projects__icon projects__icon--javascript" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>JavaScript</title><path d="M0 0h24v24H0V0zm22.034 18.276c-.175-1.095-.888-2.015-3.003-2.873-.736-.345-1.554-.585-1.797-1.14-.091-.33-.105-.51-.046-.705.15-.646.915-.84 1.515-.66.39.12.75.42.976.9 1.034-.676 1.034-.676 1.755-1.125-.27-.42-.404-.601-.586-.78-.63-.705-1.469-1.065-2.834-1.034l-.705.089c-.676.165-1.32.525-1.71 1.005-1.14 1.291-.811 3.541.569 4.471 1.365 1.02 3.361 1.244 3.616 2.205.24 1.17-.87 1.545-1.966 1.41-.811-.18-1.26-.586-1.755-1.336l-1.83 1.051c.21.48.45.689.81 1.109 1.74 1.756 6.09 1.666 6.871-1.004.029-.09.24-.705.074-1.65l.046.067zm-8.983-7.245h-2.248c0 1.938-.009 3.864-.009 5.805 0 1.232.063 2.363-.138 2.711-.33.689-1.18.601-1.566.48-.396-.196-.597-.466-.83-.855-.063-.105-.11-.196-.127-.196l-1.825 1.125c.305.63.75 1.172 1.324 1.517.855.51 2.004.675 3.207.405.783-.226 1.458-.691 1.811-1.411.51-.93.402-2.07.397-3.346.012-2.054 0-4.109 0-6.179l.004-.056z"/></svg>`,
+      TypeScript: `<svg role="img" class="projects__icon projects__icon--typescript" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>TypeScript</title><path d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0zm17.363 9.75c.612 0 1.154.037 1.627.111a6.38 6.38 0 0 1 1.306.34v2.458a3.95 3.95 0 0 0-.643-.361 5.093 5.093 0 0 0-.717-.26 5.453 5.453 0 0 0-1.426-.2c-.3 0-.573.028-.819.086a2.1 2.1 0 0 0-.623.242c-.17.104-.3.229-.393.374a.888.888 0 0 0-.14.49c0 .196.053.373.156.529.104.156.252.304.443.444s.423.276.696.41c.273.135.582.274.926.416.47.197.892.407 1.266.628.374.222.695.473.963.753.268.279.472.598.614.957.142.359.214.776.214 1.253 0 .657-.125 1.21-.373 1.656a3.033 3.033 0 0 1-1.012 1.085 4.38 4.38 0 0 1-1.487.596c-.566.12-1.163.18-1.79.18a9.916 9.916 0 0 1-1.84-.164 5.544 5.544 0 0 1-1.512-.493v-2.63a5.033 5.033 0 0 0 3.237 1.2c.333 0 .624-.03.872-.09.249-.06.456-.144.623-.25.166-.108.29-.234.373-.38a1.023 1.023 0 0 0-.074-1.089 2.12 2.12 0 0 0-.537-.5 5.597 5.597 0 0 0-.807-.444 27.72 27.72 0 0 0-1.007-.436c-.918-.383-1.602-.852-2.053-1.405-.45-.553-.676-1.222-.676-2.005 0-.614.123-1.141.369-1.582.246-.441.58-.804 1.004-1.089a4.494 4.494 0 0 1 1.47-.629 7.536 7.536 0 0 1 1.77-.201zm-15.113.188h9.563v2.166H9.506v9.646H6.789v-9.646H3.375z"/></svg>`,
+      Docker: `<svg role="img" class="projects__icon projects__icon--docker" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Docker</title><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>`,
+      "Google Analytics": `<svg role="img" class="projects__icon projects__icon--analytics" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Google Analytics</title><path d="M22.84 2.9982v17.9987c.0086 1.6473-1.3197 2.9897-2.967 2.9984a2.9808 2.9808 0 01-.3677-.0208c-1.528-.226-2.6477-1.5558-2.6105-3.1V3.1204c-.0369-1.5458 1.0856-2.8762 2.6157-3.1 1.6361-.1915 3.1178.9796 3.3093 2.6158.014.1201.0208.241.0202.3619zM4.1326 18.0548c-1.6417 0-2.9726 1.331-2.9726 2.9726C1.16 22.6691 2.4909 24 4.1326 24s2.9726-1.3309 2.9726-2.9726-1.331-2.9726-2.9726-2.9726zm7.8728-9.0098c-.0171 0-.0342 0-.0513.0003-1.6495.0904-2.9293 1.474-2.891 3.1256v7.9846c0 2.167.9535 3.4825 2.3505 3.763 1.6118.3266 3.1832-.7152 3.5098-2.327.04-.1974.06-.3983.0593-.5998v-8.9585c.003-1.6474-1.33-2.9852-2.9773-2.9882z"/></svg>`
+    };
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "projects__tech" }, _attrs))}>${icons[props.name] ?? ""}</div>`);
+    };
+  }
+});
+const _sfc_setup$3 = _sfc_main$3.setup;
+_sfc_main$3.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/TechIcon.vue");
+  return _sfc_setup$3 ? _sfc_setup$3(props, ctx) : void 0;
+};
+const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+  __name: "ProjectCard",
+  __ssrInlineRender: true,
+  props: {
+    image: {},
+    link: {},
+    techs: {}
+  },
+  setup(__props) {
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "projects__item animated animated--is-hidden" }, _attrs))}><div class="projects__image-wrapper"><img${ssrRenderAttr("src", _imports_1)} alt="" class="projects__image-background"><img${ssrRenderAttr("src", __props.image)} alt="" class="projects__image"></div><h3 class="projects__title">`);
+      ssrRenderSlot(_ctx.$slots, "name", {}, null, _push, _parent);
+      _push(`</h3><p class="projects__description">`);
+      ssrRenderSlot(_ctx.$slots, "excerpt", {}, null, _push, _parent);
+      _push(`</p><div class="projects__bottom"><div class="projects__stack"><!--[-->`);
+      ssrRenderList(__props.techs, (tech) => {
+        _push(ssrRenderComponent(_sfc_main$3, {
+          key: tech.id,
+          name: tech.name
+        }, null, _parent));
+      });
+      _push(`<!--]--></div><a${ssrRenderAttr("href", __props.link)} target="_blank" class="projects__link">See live `);
+      _push(ssrRenderComponent(unref(ArrowUpRight), { class: "projects__icon" }, null, _parent));
+      _push(`</a></div></div>`);
+    };
+  }
+});
+const _sfc_setup$2 = _sfc_main$2.setup;
+_sfc_main$2.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/ProjectCard.vue");
+  return _sfc_setup$2 ? _sfc_setup$2(props, ctx) : void 0;
+};
+const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  __name: "SocialIcon",
+  __ssrInlineRender: true,
+  props: {
+    name: {},
+    link: {}
+  },
+  setup(__props) {
+    const props = __props;
+    const icons = {
+      linkedin: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="social__icon bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>`,
+      github: `<svg role="img" class="social__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>`
+    };
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<a${ssrRenderAttrs(mergeProps({
+        href: __props.link,
+        target: "_blank",
+        class: "social"
+      }, _attrs))}>${icons[props.name] ?? ""}</a>`);
+    };
+  }
+});
+const _sfc_setup$1 = _sfc_main$1.setup;
+_sfc_main$1.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Components/SocialIcon.vue");
+  return _sfc_setup$1 ? _sfc_setup$1(props, ctx) : void 0;
+};
+const _sfc_main = /* @__PURE__ */ defineComponent({
+  __name: "Index",
+  __ssrInlineRender: true,
+  props: {
+    projects: {}
+  },
+  setup(__props) {
+    onMounted(() => {
+      const projectTiles = document.querySelectorAll(".projects__item");
+      for (let i = 0; i < projectTiles.length; i++) {
+        if (i % 2 === 1) {
+          projectTiles[i].classList.add("animated--delayed");
+        }
+      }
+      const animatedElements = document.querySelectorAll(".animated");
+      const aboutElements = document.querySelectorAll(".about__container > div");
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove("animated--is-hidden");
+            }
+          });
+        },
+        {
+          threshold: 0.5
+        }
+      );
+      const aboutObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animated--about");
+            }
+          });
+        },
+        {
+          threshold: 0.5
+        }
+      );
+      animatedElements.forEach((element) => {
+        observer.observe(element);
+      });
+      aboutElements.forEach((element) => {
+        aboutObserver.observe(element);
+      });
+    });
+    return (_ctx, _push, _parent, _attrs) => {
+      _push(`<!--[-->`);
+      _push(ssrRenderComponent(unref(Head), null, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`<title${_scopeId}>Jakub Lipiński – Full-Stack Developer | Laravel &amp; Vue.js</title><meta name="description" content="Portfolio of a Full-Stack Developer from Poland. I create modern web applications with Laravel and Vue.js – fast, scalable, and tailored to your needs."${_scopeId}><meta name="keywords" content="Jakub Lipiński, Full-Stack Developer, Laravel, Vue.js, Tailwind, TypeScript, web developer, portfolio, e-commerce, web applications"${_scopeId}><meta property="og:title" content="Jakub Lipiński – Full-Stack Developer | Laravel &amp; Vue.js"${_scopeId}><meta property="og:description" content="Portfolio of a Full-Stack Developer from Poland. Modern web applications built with Laravel and Vue.js – fast, scalable, and tailored for the user."${_scopeId}><meta property="og:type" content="website"${_scopeId}><meta property="og:url" content="https://lipinskijakub.pl"${_scopeId}><meta property="og:image" content=""${_scopeId}><meta property="og:locale" content="en_US"${_scopeId}><meta name="twitter:card" content="summary_large_image"${_scopeId}><meta name="twitter:title" content="Jakub Lipiński – Full-Stack Developer | Laravel &amp; Vue.js"${_scopeId}><meta name="twitter:description" content="Portfolio of a Full-Stack Developer from Poland. Modern web applications built with Laravel and Vue.js – fast, scalable, and tailored for the user."${_scopeId}><meta name="twitter:image" content=""${_scopeId}>`);
+          } else {
+            return [
+              createVNode("title", null, "Jakub Lipiński – Full-Stack Developer | Laravel & Vue.js"),
+              createVNode("meta", {
+                name: "description",
+                content: "Portfolio of a Full-Stack Developer from Poland. I create modern web applications with Laravel and Vue.js – fast, scalable, and tailored to your needs."
+              }),
+              createVNode("meta", {
+                name: "keywords",
+                content: "Jakub Lipiński, Full-Stack Developer, Laravel, Vue.js, Tailwind, TypeScript, web developer, portfolio, e-commerce, web applications"
+              }),
+              createVNode("meta", {
+                property: "og:title",
+                content: "Jakub Lipiński – Full-Stack Developer | Laravel & Vue.js"
+              }),
+              createVNode("meta", {
+                property: "og:description",
+                content: "Portfolio of a Full-Stack Developer from Poland. Modern web applications built with Laravel and Vue.js – fast, scalable, and tailored for the user."
+              }),
+              createVNode("meta", {
+                property: "og:type",
+                content: "website"
+              }),
+              createVNode("meta", {
+                property: "og:url",
+                content: "https://lipinskijakub.pl"
+              }),
+              createVNode("meta", {
+                property: "og:image",
+                content: ""
+              }),
+              createVNode("meta", {
+                property: "og:locale",
+                content: "en_US"
+              }),
+              createVNode("meta", {
+                name: "twitter:card",
+                content: "summary_large_image"
+              }),
+              createVNode("meta", {
+                name: "twitter:title",
+                content: "Jakub Lipiński – Full-Stack Developer | Laravel & Vue.js"
+              }),
+              createVNode("meta", {
+                name: "twitter:description",
+                content: "Portfolio of a Full-Stack Developer from Poland. Modern web applications built with Laravel and Vue.js – fast, scalable, and tailored for the user."
+              }),
+              createVNode("meta", {
+                name: "twitter:image",
+                content: ""
+              })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`<nav class="nav"><ul class="nav__menu"><li class="nav__item"><a href="#about" id="about-link" class="nav__link">About</a></li><li class="nav__item"><a href="#projects" id="projects-link" class="nav__link">Projects</a></li><li class="nav__item"><a href="#experience" id="experience-link" class="nav__link">Experience</a></li><li class="nav__item"><a href="#contact" id="contact-link" class="nav__link">Contact</a></li></ul></nav><section class="section hero"><img${ssrRenderAttr("src", _imports_0)} alt="" class="hero__background"><div class="section__container section__container--hero"><p class="hero__top-text animated animated--is-hidden"> MODERN WEB APPS WITH LARAVEL &amp; VUE </p><h1 class="hero__title animated animated--is-hidden"> Building Reliable Interfaces with <span class="hero__title hero__title--colored">Laravel and Vue.</span> Fast. Clean. Tailored for the User. </h1><p class="hero__bottom-text animated animated--is-hidden"> Hi! I’m Jakub Lipiński, a Full-Stack Developer based in Poland </p>`);
+      _push(ssrRenderComponent(_sfc_main$4, {
+        type: "link",
+        href: "/jakub_lipinski_cv.pdf",
+        class: "animated animated--is-hidden"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`Download resume `);
+            _push2(ssrRenderComponent(unref(SquareArrowOutUpRight), { class: "hero__icon" }, null, _parent2, _scopeId));
+          } else {
+            return [
+              createTextVNode("Download resume "),
+              createVNode(unref(SquareArrowOutUpRight), { class: "hero__icon" })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div></section><section id="about" class="section about"><div class="section__container"><div class="about__container"><div class="about__text animated animated--is-hidden"><h2 class="section__title section__title--left about__title"> A bit about me and <span class="section__title section__title--colored">how I approach</span> development </h2><p class="about__description"> I’m Jakub Lipiński, a Full-Stack Developer from Poland with <span class="about__description about__description--colored"> 4 years of experience</span> building modern web applications. My main focus is on <span class="about__description about__description--colored">Laravel and Vue.js</span>, but I enjoy working across the entire stack - from designing clean APIs to crafting polished, accessible interfaces. </p><p class="about__description"> I’ve had the chance to work on projects of different sizes and industries, from regional news portals to <span class="about__description about__description--colored"> AI-powered health apps and B2B e-commerce platforms</span>. No matter the scope, I aim for code that’s maintainable, performance-friendly, and pleasant to work with - because I believe a good developer’s job is not just to make things work, but to make them easy to improve and enjoyable to use. </p></div><div class="about__info animated animated--is-hidden"><div class="about__image-container"><img${ssrRenderAttr("src", _imports_1)} alt="" class="about__image-background"><img${ssrRenderAttr("src", _imports_2)} alt="" class="about__image"></div><div class="about__links">`);
+      _push(ssrRenderComponent(_sfc_main$1, {
+        name: "github",
+        link: "https://github.com/Jakub017"
+      }, null, _parent));
+      _push(ssrRenderComponent(_sfc_main$1, {
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/jakub-lipinski/"
+      }, null, _parent));
+      _push(`</div></div></div></div></section><section id="projects" class="section projects"><div class="section__container"><h2 class="section__title animated animated--is-hidden"> Here&#39;s what I&#39;ve been <span class="section__title section__title--colored">working on</span></h2><div class="projects__items"><!--[-->`);
+      ssrRenderList(__props.projects, (project) => {
+        _push(ssrRenderComponent(_sfc_main$2, {
+          key: project.id,
+          image: `/storage/${project.image}`,
+          link: project.link,
+          techs: project.techs
+        }, {
+          name: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`${ssrInterpolate(project.name)}`);
+            } else {
+              return [
+                createTextVNode(toDisplayString(project.name), 1)
+              ];
+            }
+          }),
+          excerpt: withCtx((_, _push2, _parent2, _scopeId) => {
+            if (_push2) {
+              _push2(`${ssrInterpolate(project.excerpt)}`);
+            } else {
+              return [
+                createTextVNode(toDisplayString(project.excerpt), 1)
+              ];
+            }
+          }),
+          _: 2
+        }, _parent));
+      });
+      _push(`<!--]--></div></div></section><section id="experience" class="section experience"><div class="section__container"><h2 class="section__title animated animated--is-hidden"> Overview of my <span class="section__title section__title--colored">professional experience</span></h2><div class="experience__container"><div class="experience__items"><div class="experience__item animated animated--is-hidden"><span class="experience__date">Jan 2023 - Present</span><div class="experience__text"><h4 class="experience__title"> Full-stack Developer at <span class="experience__title experience__title--colored">Agencja Digitalowa</span></h4><p class="experience__description"> Developing and maintaining web applications using Laravel, Vue, Tailwind, and TypeScript. Built custom CMS solutions, e-commerce platforms, and integrations with external APIs. Collaborated closely with designers and project managers to deliver optimized, scalable products. </p><div class="experience__skills"><span class="experience__skill">Laravel</span><span class="experience__skill">Livewire</span><span class="experience__skill">Inertia</span><span class="experience__skill">Vue</span><span class="experience__skill">TypeScript</span><span class="experience__skill">Tailwind</span><span class="experience__skill">Sass</span><span class="experience__skill">Wordpress</span><span class="experience__skill">Prestashop</span><span class="experience__skill">Git</span><span class="experience__skill">GitHub Actions</span><span class="experience__skill">Docker</span><span class="experience__skill">Linux Server</span></div></div></div><div class="experience__item animated animated--is-hidden"><span class="experience__date">Oct 2021 - Jan 2023</span><div class="experience__text"><h4 class="experience__title"> Front-end Developer at <span class="experience__title experience__title--colored">Agencja Digitalowa</span></h4><p class="experience__description"> Created responsive user interfaces with HTML, SASS, and JavaScript. Worked on WordPress and PrestaShop projects, ensuring performance optimization and cross-browser compatibility. Contributed to UX improvements and theme customization for client websites. </p><div class="experience__skills"><span class="experience__skill">HTML &amp; CSS</span><span class="experience__skill">JavaScript</span><span class="experience__skill">Sass</span><span class="experience__skill">Wordpress</span><span class="experience__skill">Prestashop</span><span class="experience__skill">Git</span><span class="experience__skill">Docker</span></div></div></div></div></div></div></section><footer id="contact" class="section contact"><img${ssrRenderAttr("src", _imports_0)} alt="" class="contact__background"><div class="section__container section__container--contact section__container--pb-0"><div class="contact__main animated animated--is-hidden"><h2 class="section__title"> Feel free to reach out if you&#39;d like to <span class="section__title section__title--colored">connect</span> or learn more about my <span class="section__title section__title--colored">work </span></h2><p class="contact__description"> If you&#39;d like to talk about my work or have questions about my experience, feel free to reach out. I&#39;ll get back to you as soon as I can. </p>`);
+      _push(ssrRenderComponent(_sfc_main$4, {
+        type: "external",
+        href: "mailto:kontakt@lipinskijakub.pl"
+      }, {
+        default: withCtx((_, _push2, _parent2, _scopeId) => {
+          if (_push2) {
+            _push2(`Contact Me Now `);
+            _push2(ssrRenderComponent(unref(ArrowUpRight), { class: "contact__icon" }, null, _parent2, _scopeId));
+          } else {
+            return [
+              createTextVNode("Contact Me Now "),
+              createVNode(unref(ArrowUpRight), { class: "contact__icon" })
+            ];
+          }
+        }),
+        _: 1
+      }, _parent));
+      _push(`</div><div class="contact__bottom"><p class="contact__description contact__description--bottom"> Copyright ©2025 Jakub Lipiński </p><div class="contact__links">`);
+      _push(ssrRenderComponent(_sfc_main$1, {
+        name: "github",
+        link: "https://github.com/Jakub017"
+      }, null, _parent));
+      _push(ssrRenderComponent(_sfc_main$1, {
+        name: "linkedin",
+        link: "https://www.linkedin.com/in/jakub-lipinski/"
+      }, null, _parent));
+      _push(`</div></div></div></footer><!--]-->`);
+    };
+  }
+});
+const _sfc_setup = _sfc_main.setup;
+_sfc_main.setup = (props, ctx) => {
+  const ssrContext = useSSRContext();
+  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add("resources/js/Pages/Index.vue");
+  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;
+};
+const __vite_glob_0_0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: _sfc_main
+}, Symbol.toStringTag, { value: "Module" }));
+createServer(
+  (page) => createInertiaApp({
+    page,
+    render: renderToString,
+    resolve: (name) => {
+      const pages = /* @__PURE__ */ Object.assign({
+        "./Pages/Index.vue": __vite_glob_0_0
+      });
+      return pages[`./Pages/${name}.vue`];
+    },
+    setup({ App, props, plugin }) {
+      return createSSRApp({
+        render: () => h(App, props)
+      }).use(plugin);
+    }
+  }),
+  { cluster: true }
+);

@@ -354,7 +354,6 @@ import { SquareArrowOutUpRight, ArrowUpRight } from "lucide-vue-next";
 import PrimaryButton from "../Components/PrimaryButton.vue";
 import ProjectCard from "../Components/ProjectCard.vue";
 import SocialIcon from "../Components/SocialIcon.vue";
-import { EqualSquare } from "lucide";
 
 onMounted(() => {
     const projectTiles = document.querySelectorAll(".projects__item");
