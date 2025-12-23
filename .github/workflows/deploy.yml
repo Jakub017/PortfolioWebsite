@@ -17,14 +17,6 @@ jobs:
         with:
           php-version: "8.4"
 
-      - name: Install Dependencies (Composer)
-        run: composer install --no-interaction --no-dev --optimize-autoloader
-
-      - name: Install Dependencies (NPM)
-        run: |
-          npm install
-          npm run build
-
       - name: Deploy to VPS via SSH
         uses: appleboy/ssh-action@master
         with:
@@ -33,11 +25,23 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd /home/user/web/lipinskijakub.pl/public_html
+
+            # Pobieranie kodu
             git pull origin main
 
+            # Backend
             composer install --no-dev --optimize-autoloader
+
+            # Budowanie frontendu
+            npm install
+            npm run build
+
+            # Laravel
             php artisan migrate --force
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
+            php artisan filament:optimize
+
+            # Restart SSR
             php artisan inertia:stop-ssr || true
