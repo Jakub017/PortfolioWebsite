@@ -92,7 +92,7 @@ const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   },
   setup(__props) {
     return (_ctx, _push, _parent, _attrs) => {
-      _push(`<div${ssrRenderAttrs(mergeProps({ class: "projects__item animated animated--is-hidden" }, _attrs))}><div class="projects__image-wrapper"><img${ssrRenderAttr("src", _imports_1)} alt="" class="projects__image-background"><img${ssrRenderAttr("src", __props.image)} alt="" class="projects__image"></div><h3 class="projects__title">`);
+      _push(`<div${ssrRenderAttrs(mergeProps({ class: "projects__item animated animated--is-hidden" }, _attrs))}><img${ssrRenderAttr("src", __props.image)} alt="" class="projects__image"><h3 class="projects__title">`);
       ssrRenderSlot(_ctx.$slots, "name", {}, null, _push, _parent);
       _push(`</h3><p class="projects__description">`);
       ssrRenderSlot(_ctx.$slots, "excerpt", {}, null, _push, _parent);

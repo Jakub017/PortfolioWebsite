@@ -1,14 +1,6 @@
 <template>
     <div class="projects__item animated animated--is-hidden">
-        <div class="projects__image-wrapper">
-            <img
-                src="../../../public/img/image-bgc.png"
-                alt=""
-                class="projects__image-background"
-            />
-            <img :src="image" alt="" class="projects__image" />
-        </div>
-
+        <img :src="image" alt="" class="projects__image" />
         <h3 class="projects__title">
             <slot name="name" />
         </h3>
