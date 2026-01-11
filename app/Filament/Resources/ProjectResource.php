@@ -45,7 +45,7 @@ class ProjectResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->label('Nazwa')
                     ->required()
-                    ->afterStateUpdated(function($state, callable $set) {
+                    ->afterStateUpdated(function ($state, callable $set) {
                         $set('slug', Str::slug($state));
                     })
                     ->columnSpanFull()
@@ -92,6 +92,8 @@ class ProjectResource extends Resource
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
+            ->reorderable('order')
+            ->defaultSort('order', 'asc')
             ->filters([
                 //
             ])
