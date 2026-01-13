@@ -175,6 +175,8 @@
                     :image="`/storage/${project.image}`"
                     :link="project.link"
                     :techs="project.techs"
+                    :github_link="project.github_link"
+                    :earlyVersion="project.early_version"
                 >
                     <template #name>{{ project.name }}</template>
                     <template #excerpt>{{ project.excerpt }}</template>
@@ -341,6 +343,8 @@ type Project = {
     description: string;
     image: string;
     link: string;
+    github_link: string;
+    early_version: boolean;
     techs: Tech[];
 };
 

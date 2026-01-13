@@ -68,11 +68,18 @@ class ProjectResource extends Resource
                     ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
+                Forms\Components\TextInput::make('github_link')
+                    ->label('Link do repozytorium')
+                    ->columnSpanFull()
+                    ->maxLength(255),
                 Forms\Components\TextInput::make('slug')
                     ->label('Slug')
                     ->columnSpanFull()
                     ->required()
                     ->maxLength(255),
+                Forms\Components\Toggle::make('early_version')
+                    ->label('Wersja wczesna')
+                    ->required(),
             ]);
     }
 
